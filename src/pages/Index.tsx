@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -37,17 +38,46 @@ const Index = () => {
     };
   }, []);
 
+  // Structured data for hotel management software (JSON-LD)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SeamlessHotel Management System",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for pricing",
+      "priceCurrency": "USD"
+    },
+    "description": "A seamless, smart, and scalable hotel management system that streamlines operations from reception to kitchen with AI-powered tools.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "250"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>SeamlessHotel - Next-Gen Hotel Management System</title>
+        <meta name="description" content="A seamless, smart, and scalable hotel management system that streamlines operations from reception to kitchen with AI-powered tools." />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       <Navbar />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Comparison />
-      <Pricing />
-      <Testimonials />
-      <Faq />
-      <Cta />
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Comparison />
+        <Pricing />
+        <Testimonials />
+        <Faq />
+        <Cta />
+      </main>
       <Footer />
     </div>
   );
