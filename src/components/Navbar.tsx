@@ -25,10 +25,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-white font-bold">S</span>
-          </div>
-          <span className="font-display font-bold text-xl">SeamlessHotel</span>
+          <span className="font-display font-bold text-xl">Innstay</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
